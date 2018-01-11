@@ -1,6 +1,16 @@
-" THIS IS THE TAGGEN PACKAGE
-" tags are generated in a local directory, and then appended to the tags variable
-" at the end, so tags in the current directory have priority
+" Vim global plugin for managin ctags and cscope files per-directory Last
+" Change:	2017 Jan 10 
+" Maintainer:	Jordi Castells <jordi.kstells at gmail punkt com>
+" License:	This file is placed in the public domain.
+"
+" tags are generated in a local directory, and then appended to the tags
+" variable at the end, so tags in the current directory have priority
+
+
+if exists("g:taggen_loaded")
+	finish
+endif
+let g:taggen_loaded=1
 
 " delete functions already loaded
 if exists("TAGGEN_LOADED")
@@ -34,12 +44,12 @@ endif
 :let s:csofile =  g:taggen_tagdir . s:cwd . "/cscope.out"
 :let s:csffile =  g:taggen_tagdir . s:cwd . "/cscope.files"
 
-" Check existance of all needed functions
+" Check existance of all needed functions --- {{{
 :if exists("*mkdir")
-: echo "Mkdir present"
+	echo "System can't use mkdir. So this plugin is not available."
+	finish
 :endif
-
-
+" --- }}}
 
 " Create tag dir if it does not exist
 :if !isdirectory(s:tagdir)

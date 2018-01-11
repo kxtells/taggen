@@ -1,0 +1,37 @@
+*taggen.txt*	Plugin for handling various cscope and ctags file.
+
+Useful for handling different projects ctags and cscope files in the same
+place, and not have it mixed with the source code. Initially created to avoid
+long waits when regenerating and seraching in networked drives.
+
+Commands:
+:TagGen
+	Generates cscope and ctags file from the current working directory recursively.
+
+:TagLoad
+	Loads existing ctags and cscope files for the current directory.
+
+If you make typing mistakes, this plugin will have them corrected
+automatically.
+
+There are currently only a few corrections.  Add your own if you like.
+
+Mappings:
+<Leader>a   or   <Plug>TypecorrAdd
+	Add a correction for the word under the cursor.
+
+Commands:
+:Correct {word}
+	Add a correction for {word}.
+
+															*taggen-settings*
+You can modify the behaviour of taggen in various ways
+
+g:taggen_cscope=[1|0]
+	Enable or disable the use of cscope
+
+g:taggen_ctags=[1|0]
+	Enable or disable the use of ctags
+
+g:taggen_tagdir=<string>
+	Directory where to store all the tags files. By default ~/.vim/TagGen
