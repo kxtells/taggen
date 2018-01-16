@@ -45,7 +45,7 @@ endif
 :let s:csffile =  g:taggen_tagdir . s:cwd . "/cscope.files"
 
 " Check existance of all needed functions --- {{{
-:if exists("*mkdir")
+:if !exists("*mkdir")
 	echo "System can't use mkdir. So this plugin is not available."
 	finish
 :endif

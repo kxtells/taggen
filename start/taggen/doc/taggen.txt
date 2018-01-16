@@ -1,37 +1,64 @@
-*taggen.txt*	Plugin for handling various cscope and ctags file.
+*taggen.txt*	For Vim version 8.0	Last change: 2018 Jan 10 
+
+Author: Jordi Castells
+License: Same as Vim |license|
 
 Useful for handling different projects ctags and cscope files in the same
 place, and not have it mixed with the source code. Initially created to avoid
 long waits when regenerating and seraching in networked drives.
 
-Commands:
-:TagGen
-	Generates cscope and ctags file from the current working directory recursively.
+							*taggen-commands*
+COMMANDS~
 
+							*taggen-:TagGen*
+:TagGen
+	Generates cscope and ctags file from the current working directory
+	recursively.
+
+							*taggen-:Tagload*
 :TagLoad
 	Loads existing ctags and cscope files for the current directory.
+
+							*taggen-:TagDel*
+:TagDel
+	Delete tag files related to the current directory |:pwd|.
+
+							*taggen-:TagDelAll*
+:TagDel
+	Delete all tag files under the directory defined by the
+	|g:taggen_tagdir| variable
+
+
 
 If you make typing mistakes, this plugin will have them corrected
 automatically.
 
 There are currently only a few corrections.  Add your own if you like.
 
-Mappings:
 <Leader>a   or   <Plug>TypecorrAdd
 	Add a correction for the word under the cursor.
 
-Commands:
-:Correct {word}
-	Add a correction for {word}.
+							*taggen-settings*
+SETTINGS~
 
-															*taggen-settings*
 You can modify the behaviour of taggen in various ways
 
-g:taggen_cscope=[1|0]
-	Enable or disable the use of cscope
+							*g:taggen_cscope*
 
-g:taggen_ctags=[1|0]
-	Enable or disable the use of ctags
+g:taggen_cscope 	<int> (default 1)
+	Enable or disable the use of cscope. 
+	Set to 0 to not call cscope.
 
-g:taggen_tagdir=<string>
-	Directory where to store all the tags files. By default ~/.vim/TagGen
+							*g:taggen_ctags*
+g:taggen_ctags		<int> (default 1)
+	Enable or disable the use of ctags.
+	Set to 0 to not call ctags.
+
+							*g:taggen_tagdir*
+g:taggen_tagdir		<string> (default ~/.vim/TagGen)
+	Directory where to store all the tags files.
+
+
+ABOUT~
+
+ vim:tw=78:ts=8:ft=help:norl:

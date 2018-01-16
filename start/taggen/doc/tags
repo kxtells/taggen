@@ -1,2 +1,10 @@
+g:taggen_cscope	taggen.txt	/*g:taggen_cscope*
+g:taggen_ctags	taggen.txt	/*g:taggen_ctags*
+g:taggen_tagdir	taggen.txt	/*g:taggen_tagdir*
+taggen-:TagDel	taggen.txt	/*taggen-:TagDel*
+taggen-:TagDelAll	taggen.txt	/*taggen-:TagDelAll*
+taggen-:TagGen	taggen.txt	/*taggen-:TagGen*
+taggen-:Tagload	taggen.txt	/*taggen-:Tagload*
+taggen-commands	taggen.txt	/*taggen-commands*
 taggen-settings	taggen.txt	/*taggen-settings*
 taggen.txt	taggen.txt	/*taggen.txt*
